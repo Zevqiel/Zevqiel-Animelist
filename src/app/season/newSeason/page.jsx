@@ -7,7 +7,7 @@ const Page = () => {
     return(
         <>
         <Hero/>
-        <AnimePage title={`Anime Musim Ini`} linkHref={`seasons/now`}/>
+        <AnimePage title={`Anime Musim Ini`} linkHref={`seasons/now`} season={`seasons`}/>
         <Footer/>
         </>
     )

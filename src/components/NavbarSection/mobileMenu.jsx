@@ -8,7 +8,11 @@ const MobileMenu = ({ isOpen, user }) => {
     return (
         <div className={`mobile-menu md:hidden ${isOpen ? "" : "hidden"} text-slate-200 transition-all ease-in`} id="nav-content">
             <Link href="/" className="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-blue-500 transition-all ease-in">Home</Link>
-            <Link href="/users/dashboard" className="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-blue-500 transition-all ease-in">Dashboard</Link>
+            {
+                user ? <Link href="/users/dashboard" className="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-blue-500 transition-all ease-in">Dashboard</Link>
+                : null
+            }
+            
             <Link href="/season/allSeasons" className="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-blue-500 transition-all ease-in">Season</Link>
             <Link href="/about" className="block py-2 px-4 text-sm hover:bg-gray-200 hover:text-blue-500 transition-all ease-in">About</Link>
             <div className="mt-4 flex space-x-4 px-4 pb-5">

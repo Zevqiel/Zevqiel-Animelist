@@ -8,7 +8,7 @@ import Pagination from "@/components/Utilities/pagination"
 import { getAnimeResponse } from "@/libs/apiLibs"
 import { useEffect, useState } from "react"
 
-const AnimePage = ({ title, linkHref }) => {
+const AnimePage = ({ title, linkHref, season }) => {
 
     const [page, setPage] = useState(1)
     const [animePage, setAnimePage] = useState([])
@@ -25,7 +25,7 @@ const AnimePage = ({ title, linkHref }) => {
 
     return (
         <section className="py-6 md:py-10 animate__animated animate__fadeInUp px-8 space-y-3 bg-gray-900">
-            <Header title={`${title} #${page}`} link={setLinkPage} />
+            <Header title={`${title} #${page}`} link={setLinkPage} season={season ? season : null}/>
             <AnimeList api={animePage} />
             <Pagination setPage={setPage} lastPage={animePage.pagination?.last_visible_page} dataPage={page} />
         </section>
