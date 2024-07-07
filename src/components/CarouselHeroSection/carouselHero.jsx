@@ -12,6 +12,7 @@ const CarouselHero = ({ hero }) => {
           infiniteLoop
           useKeyboardArrows
           autoPlay
+          swipeable={false}
         >
 
 {hero.map((car, index) => {
